@@ -1,0 +1,200 @@
+{% extends 'student_template/base_template_task.html' %}
+{% load static %}
+
+
+{% block main_content %}
+
+<style>
+  .content {
+    height: 100vh;
+  }
+  .container-fluid {
+    display: flex;
+    flex-direction: row;
+
+  }
+
+  .input_window_code_wrapper {
+    width: 41vw;
+    max-width: 41vw;
+    max-height: 50vh;
+    height: 50vh;
+    margin: 0;
+  }
+
+  .console {
+    width: 41vw;
+    max-width: 41vw;
+    max-height: 50vh;
+    height: 50vh;
+  }
+
+  .theory_window {
+    background-color: wheat;
+    font-size: 20px;
+    width: 41vw;
+    height: 100vh;
+    word-wrap: normal;
+    overflow: auto;
+    border-radius: 1%;
+  }
+  .pre {
+    overflow-wrap: normal;
+  }
+
+  .first_column {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+
+  .second_column {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+  textarea {
+    width:41vw; 
+    max-width: 41vw;
+    max-height: 50vh;
+    height: 50vh;
+    padding: 0 1% 1% 1%;
+  }
+  
+.b {
+   background-color: rgb(255, 255, 255, 0.5);
+   width: min-content;
+   border-radius: 8%;
+   padding: 1%;
+   position: relative;
+   left: 150px;
+ }
+
+
+</style>
+<!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+
+    <div class="first_column">
+      <div class="input_window_code_wrapper"> 
+        <p> <textarea name="text">  
+import turtle 
+t = turtle.Turtle()
+t.speed(2)
+t.forward(50)
+t.left(90)
+t.forward(50)
+t.left(90)
+t.forward(50)
+t.left(90)
+t.forward(50)
+
+t.reset()
+t.forward(50)
+t.clear()
+t.left(90)
+t.forward(50)
+        </textarea></p>
+        
+      </div>
+      <div class="console">
+        <img src="{% static "dist/img/console.png" %}" width="100%" alt="">
+      </div>
+    </div>
+
+    <div class="second_column">
+      <div class="theory_window">
+ <pre>
+ <h2>    Для начала работы с черепашкой 
+  нужно вызвать модуль под названием 
+              turtle:</h2>
+<div class="b"><b> **import turtle** 
+  **import turtle** </b>
+</div>
+  Для создания холста (проще говоря - создание черепашки на экране), 
+  нужно использовать команду:
+
+<div class="b"><b> **t = turtle.Turtle()** 
+  **t = turtle.Turtle()** </b>
+</div>    
+  Теперь мы можем давать черепашке команды, вызывая с помощью только, 
+  что созданной переменной t специальные функции.
+  Например, команда forward() служит для перемещения черепашки вперед. 
+  Чтобы черепашка сдвинулась на 50 пикселей, введите:
+
+<div class="b"><b> **t.forward(50)** 
+  **t.forward(50)** </b>
+</div>
+  Теперь черепашка передвинулась на 50 пикселей.
+
+  <b>Пиксель — это одна экранная точка, самый маленький элемент изображения. </b>
+  Все, что вы видите на экране монитора, состоит из 
+  пикселей — крошечных квадратных точек.
+
+  Если посмотреть в увеличении на холст и линию, 
+  которую нарисовала черепашка, обнаружится, что и след черепашки, 
+  и она сама — это просто набор пикселей. 
+  Это и есть самая простая компьютерная графика.
+
+  Теперь повернем черепашку на 90 градусов влево, введя такую команду:
+
+<div class="b"><b> **t.left(90)**   
+  **t.left(90)**  </b>
+</div>
+  <i> Небольшое пояснение:
+
+  Направление, в котором вы смотрите, это 0 градусов.
+  Если вы вытянете левую руку вбок, это будет 90 градусов влево.
+  Если вы вытянете вбок правую руку, это будет 90 градусов вправо.</i>
+
+
+  Если продолжать двигаться по часовой стрелке от вашей правой руки и дальше, 
+
+  <b>180 градусов — это прямо за вашей спиной. </b>
+
+  <b>270 градусов — там, куда указывает левая рука,</b>
+
+  <b>360 градусов — направление вашего взгляда, то есть точка, откуда мы начали.</b>
+
+  Получается, что градусы проходят полный круг от 0 до 360.
+
+  После того как черепашка повернется влево, она будет смотреть 
+  в новом направлении — как если бы вы развернулись на 90 градусов туда, 
+  куда показывает ваша левая рука.
+
+  Поэтому команда t.left(90) разворачивает стрелочку острием вверх 
+  (так как вначале она указывала вправо). 
+
+  Команда t.left(90) даст тот же результат, 
+  что и команда t.right(270), а t.right(90) соответствует t.left(270).
+
+
+  <i><b>Просто предстаьте перед собой круг с градусами, 
+    и все станет понятно :) </i></b>
+
+  Чтобы очистить холст, введите команду reset().
+
+  При этом с холста исчезнет все нарисованное, 
+  а черепашка вернется в начальную позицию.
+    
+<div class="b"><b> **t.reset()**  
+  **t.reset()** </b>
+</div>
+  Либо можно использовать команду clear().
+
+  Холст также очистится, но черепашка останется на прежнем месте.
+
+<div class="b"><b> **t.clear()** </b>
+</div>
+
+  </pre>
+      </div>
+    </div>
+
+
+
+  </div>
+</section>
+<!-- /.content -->
+{% endblock main_content %}

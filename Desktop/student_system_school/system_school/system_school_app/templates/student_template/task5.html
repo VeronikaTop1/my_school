@@ -1,0 +1,182 @@
+{% extends 'student_template/base_template_task.html' %}
+{% load static %}
+
+
+{% block main_content %}
+
+<style>
+  .content {
+    height: 100vh;
+  }
+  .container-fluid {
+    display: flex;
+    flex-direction: row;
+
+  }
+
+  .input_window_code_wrapper {
+    width: 41vw;
+    max-width: 41vw;
+    max-height: 50vh;
+    height: 50vh;
+    margin: 0;
+  }
+
+  .console {
+    width: 41vw;
+    max-width: 41vw;
+    max-height: 50vh;
+    height: 50vh;
+  }
+
+  .theory_window {
+    background-color: wheat;
+    font-size: 20px;
+    width: 41vw;
+    height: 100vh;
+    word-wrap: normal;
+    overflow: auto;
+    border-radius: 1%;
+  }
+  .pre {
+    overflow-wrap: normal;
+  }
+
+  .first_column {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+
+  .second_column {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+  textarea {
+    width:41vw; 
+    max-width: 41vw;
+    max-height: 50vh;
+    height: 50vh;
+    padding: 0 1% 1% 1%;
+  }
+  
+.b {
+   background-color: rgb(255, 255, 255, 0.5);
+   width: min-content;
+   border-radius: 8%;
+   padding: 1%;
+   position: relative;
+   left: 150px;
+ }
+
+
+</style>
+<!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+
+    <div class="first_column">
+      <div class="input_window_code_wrapper"> 
+        <p> <textarea name="text">  
+import turtle 
+t = turtle.Turtle()
+t.speed(2)
+t.forward(50)
+t.left(90)
+t.forward(50)
+t.left(90)
+t.forward(50)
+t.left(90)
+t.forward(50)
+
+t.reset()
+t.forward(50)
+t.clear()
+t.left(90)
+t.forward(50)
+        </textarea></p>
+        
+      </div>
+      <div class="console">
+        <img src="{% static "dist/img/console.png" %}" width="100%" alt="">
+      </div>
+    </div>
+
+    <div class="second_column">
+      <div class="theory_window">
+ <pre>
+ <h2> Давайте разберемся, что такое переменные 
+          на простом примере.</h2>
+
+  Создайте переменную teacher и 
+        присвойте ей значение c именем вашего преподавателя.
+
+<div class="b"><b>teacher = "Имя"
+print(teacher)
+>>> Имя </b>
+</div>    
+  Слово <b>Имя</b> на забудьте заменить на настоящее имя!
+
+  Чтобы сохранить строку, нужно заключить текст в кавычки. 
+  В Python вы можете использовать для этой цели 
+  как одинарные, так и двойные кавычки. Допустимы оба варианта, 
+  <b>но кавычки в начале и в конце строки должны быть одного типа.</b>
+
+    Например:
+
+<div class="b"><b> teacher = "Имя"</b></div>
+<blockquote>Это, конечно, мелочи. Но дьявол кроется в деталях :)</blockquote>
+  Теперь мы можем обращаться к переменной и выполнять с ней операции. 
+
+  <i><b>Например, выведите имя учителя 20 раз:</i></b>
+    
+<div class="b"><b> print(teacher * 20) </b>
+</div>
+  <b> Имена можно присваивать так же числовым значениям:</b>
+
+<div class="b"><b>  A = 5   
+  B = 6   
+  A + B   </b>
+</div>
+<b> Также переменную можно приравнять саму к себе.</b>
+  Это все равно что утверждать: «Я — это я»:
+
+  <div class="b"><b>  klass = 8
+  klass = klass 
+     
+  print(klass)
+  >>> 8</b></div>
+  
+  <b>Однако небольшое изменение может сделать вас совершенно новой сущностью:</b>
+
+  <div class="b"><b>  klass = klass + 1
+    print(variable)
+    >>> 9</b></div>
+
+  Или:
+  <div class="b"><b>  kklass = 8
+    klass += 1
+    print(klass )
+    >>> 9</b></div>
+
+    <h2>     При работе с переменными, 
+  важно <u> учитывать несколько правил:</u></h2><b><ol>
+<li>Можно использовать только латинские буквы, цифры и нижние подчеркивания;</li>
+<li>Имя переменной не может начинаться с числа;</li>
+<li>Чувствительно к регистру, те Teacher и teacher – это две разные переменные;</li>
+<li>Вам будет гораздо удобнее работать с кодом, 
+если название переменных будет отражать суть 
+  (например, не lkjn, a myTeacher).</li></b></ol>
+
+
+  </pre>
+      </div>
+    </div>
+
+
+
+  </div>
+</section>
+<!-- /.content -->
+{% endblock main_content %}

@@ -1,0 +1,221 @@
+{% extends 'student_template/base_template_task.html' %}
+{% load static %}
+
+
+{% block main_content %}
+
+<style>
+  .content {
+    height: 100vh;
+  }
+  .container-fluid {
+    display: flex;
+    flex-direction: row;
+
+  }
+
+  .input_window_code_wrapper {
+    width: 41vw;
+    max-width: 41vw;
+    max-height: 50vh;
+    height: 50vh;
+    margin: 0;
+  }
+
+  .console {
+    width: 41vw;
+    max-width: 41vw;
+    max-height: 50vh;
+    height: 50vh;
+  }
+
+  .theory_window {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: wheat;
+    font-size: 20px;
+    padding: 1%;
+    width: 41vw;
+    max-width: 41vw;
+    height: 100vh;
+    word-wrap: normal;
+    overflow: auto;
+    border-radius: 1%;
+  }
+  .pre {
+    overflow-wrap: normal;
+  }
+
+  .first_column {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+
+  .second_column {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+  textarea {
+    width:41vw; 
+    max-width: 41vw;
+    max-height: 50vh;
+    height: 50vh;
+    padding: 1%;
+  }
+ 
+
+
+</style>
+<!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+
+    <div class="first_column">
+      <div class="input_window_code_wrapper">
+       
+        <p> <textarea name="text">  
+# Этот код рисует для вашей черепахи лабиринт. 
+# Не трогайте его ни в коем случае!
+
+import turtle
+t = turtle.Turtle()
+t.shape("turtle")
+t.up()
+t.speed(100)
+t.left(180)
+t.forward(200)
+t.right(90)
+t.forward(100)
+t.down()
+t.right(90)
+t.forward(200)
+t.right(90)
+t.forward(200)
+t.right(90)
+t.forward(80)
+t.up()
+t.forward(40)
+t.down()
+t.forward(80)
+t.right(90)
+t.forward(200)
+t.right(90)
+t.up()
+t.forward(40)
+t.right(90)
+t.forward(40)
+t.down()
+t.forward(120)
+t.left(90)
+t.forward(120)
+t.left(90)
+t.forward(120)
+t.left(90)
+t.forward(40)
+t.up()
+t.forward(40)
+t.down()
+t.forward(40)
+t.up()
+t.left(90)
+t.forward(40)
+t.left(90)
+t.forward(40)
+t.down()
+t.forward(40)
+t.right(90)
+t.forward(40)
+t.right(90)
+t.up()
+t.forward(40)
+t.down()
+t.right(90)
+t.forward(40)
+t.up()
+t.right(90)
+t.forward(20)
+t.right(90)
+t.forward(20)
+t.right(90)
+t.forward(20)
+t.down()
+t.forward(20)
+t.up()
+t.right(90)
+t.forward(40)
+t.right(90)
+t.forward(20)
+t.left(90)
+t.down()
+t.forward(20)
+t.up()
+t.right(90)
+t.forward(40)
+t.right(90)
+t.forward(20)
+t.down()
+t.forward(20)
+t.up()
+t.forward(20)
+t.left(90)
+t.down()
+t.forward(25)
+t.up()
+t.left(180)
+t.forward(45)
+t.left(90)
+t.down()
+t.color("red")
+t.speed(10)
+
+# Ниже напишите код для прохождения лабиринта
+
+t.forward(40)
+t.right(90)
+t.forward(45)
+t.right(90)
+t.forward(65)
+t.right(90)
+t.forward(45)
+t.left(90)
+t.forward(50)
+t.left(90)
+t.forward(65)
+t.left(90)
+t.forward(150)
+t.left(90)
+t.forward(65)
+t.right(90)
+t.forward(65)
+
+        </textarea></p>
+        
+      </div>
+      <div class="console">
+        <img src="{% static "dist/img/console.png" %}" width="100%" alt="">
+      </div>
+    </div>
+
+    <div class="second_column">
+      <div class="theory_window">
+
+        <pre>
+<h7><b > Давайте попрактикуемся и вспомним лабиринт, который проходили на мастерклассе.</b></h7>
+
+
+                                      😎
+
+    <img src="{% static "dist/img/castle.png" %}" width="90%"  alt="">
+        </pre>
+      </div>
+    </div>
+
+
+
+  </div>
+</section>
+<!-- /.content -->
+{% endblock main_content %}

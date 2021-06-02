@@ -1,0 +1,174 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Авторская школа программирования | Log in</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{% static "plugins/fontawesome-free/css/all.min.css" %}">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- icheck bootstrap -->
+  <link rel="stylesheet" href="{% static "plugins/icheck-bootstrap/icheck-bootstrap.min.css"%}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static "dist/css/adminlte.min.css"%}">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <style>
+    body {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .slider,
+    .login_all {
+      width: 50%;
+    }
+
+    .container_slider_css {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position: relative
+    }
+
+    .photo_slider_css {
+      position: absolute;
+      animation: round 20s infinite;
+      opacity: 0;
+      width: 100%
+    }
+
+    @keyframes round {
+      25% {
+        opacity: 1
+      }
+
+      40% {
+        opacity: 0
+      }
+    }
+
+    img:nth-child(1) {
+      animation-delay: 16s
+    }
+
+    img:nth-child(2) {
+      animation-delay: 12s
+    }
+
+    img:nth-child(3) {
+      animation-delay: 8s
+    }
+
+    img:nth-child(4) {
+      animation-delay: 4s
+    }
+
+    img:nth-child(5) {
+      animation-delay: 0
+    }
+  </style>
+</head>
+
+<body>
+  <div class="slider">
+    <div class="container_slider_css">
+      <img class="photo_slider_css" src="{% static "img/1.jpg" %}" alt="">
+      <img class="photo_slider_css" src="{% static "img/2.jpg" %}" alt="">
+      <img class="photo_slider_css" src="{% static "img/3.jpg" %}" alt="">
+      <img class="photo_slider_css" src="{% static "img/4.jpg" %}" alt="">
+      <img class="photo_slider_css" src="{% static "img/5.jpg" %}" alt="">
+    </div>
+  </div>
+
+  <div class="login_all">
+    <div class="hold-transition login-page">
+
+      <div class="login-box">
+        <div class="login-logo">
+          <a href="../../index2.html">
+            <font color="#ff69b4" size="8px"> Авторская школа</font> <b>программирования</b>
+          </a>
+        </div>
+        <!-- /.login-logo -->
+        <div class="card">
+          <div class="card-body login-card-body">
+            <p class="login-box-msg">Авторизуйся для доступа к курсу</p>
+
+            <form action="/doLogin" method="post">
+              {% csrf_token %}
+              <div class="input-group mb-3">
+                <input type="email" class="form-control" placeholder="Email" name="email">
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <span class="fas fa-envelope"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="input-group mb-3">
+                <input type="password" class="form-control" placeholder="Password" name="password">
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <span class="fas fa-lock"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-8">
+                  <div class="icheck-primary">
+                    <input type="checkbox" id="remember">
+                    <label for="remember">
+                      Запомнить меня
+                    </label>
+                  </div>
+                </div>
+                <!-- /.col -->
+                <div class="col-4">
+                  <button type="submit" class="btn btn-primary btn-block">Войти</button>
+                </div>
+
+                <!-- /.col -->
+              </div>
+              <div class="row">
+                {% if messages %}
+                <div class="col-12">
+                  {% for message in messages %}
+                  {% if message.tags == 'error' %}
+                  <div class="alert alert-danger" style="margin-top:10px">{{ message }}</div>
+                  {% endif %}
+                  {% endfor %}
+                </div>
+                {% endif %}
+              </div>
+            </form>
+
+
+
+          </div>
+          <!-- /.login-card-body -->
+        </div>
+      </div>
+      <!-- /.login-box -->
+
+      <!-- jQuery -->
+      <script src="{% static "plugins/jquery/jquery.min.js"%}"></script>
+      <!-- Bootstrap 4 -->
+      <script src="{% static "plugins/bootstrap/js/bootstrap.bundle.min.js"%}"></script>
+      <!-- AdminLTE App -->
+      <script src="{% static "dist/js/adminlte.min.js"%}"></script>
+
+    </div>
+
+  </div>
+</body>
+
+
+</html>

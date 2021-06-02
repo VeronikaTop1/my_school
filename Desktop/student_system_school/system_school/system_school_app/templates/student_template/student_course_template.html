@@ -1,0 +1,403 @@
+{% extends 'student_template/base_template.html' %}
+{% load static %}
+{% block page_title %}
+Панель для занятий
+{% endblock page_title %}
+{% block main_content %}
+
+<style>
+  .accordion {
+    background-color: rgb(255, 192, 203);
+    margin-top: 1%;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 26px;
+    transition: 0.4s;
+    border-radius: 7px;
+  }
+
+  .active,
+  .accordion:hover {
+    background-color: #ccc;
+  }
+
+  .accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+
+  .active:after {
+    content: "\2212";
+  }
+
+  .panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+
+  .accordeon_wrapper {
+
+    margin: 1% 3%;
+  }
+</style>
+</head>
+
+<body>
+  <div class="accordeon_wrapper">
+    <h1>Все уроки курса</h1>
+
+    <button class="accordion">Месяц 1</button>
+    <div class="panel">
+
+      <button class="accordion">М1.У1 (Месяц 1.Урок 1)</button>
+      <div class="panel">
+        <button class="accordion">
+          <a href="/task1" type="submit" class=" {% if request.path == task1 %} active {% endif %}">
+            <font color="#444">Задание 1. Знакомство </font>
+          </a>
+        </button>
+        
+        <button class="accordion">
+          <a href="/task2" type="submit" class=" {% if request.path == task2 %} active {% endif %}">
+            <font color="#444">Turtle </font>
+          </a>
+        </button>
+        
+        <button class="accordion">
+          <a href="/task3" type="submit" class=" {% if request.path == task3 %} active {% endif %}">
+            <font color="#444">Квадрат </font>
+          </a>
+        </button>
+        
+        <button class="accordion">
+          <a href="/task4" type="submit" class=" {% if request.path == task4 %} active {% endif %}">
+            <font color="#444">Параллели </font>
+          </a>
+        </button>
+        
+        <button class="accordion">
+          <a href="/task5" type="submit" class=" {% if request.path == task5 %} active {% endif %}">
+            <font color="#444">Переменные </font>
+          </a>
+        </button>
+        
+        <button class="accordion">
+          <a href="/task6" type="submit" class=" {% if request.path == task6 %} active {% endif %}">
+            <font color="#444">Переменный квадрат </font>
+          </a>
+        </button>
+        
+        <button class="accordion">
+          <a href="/task7" type="submit" class=" {% if request.path == task7 %} active {% endif %}">
+            <font color="#444">Лабиринт </font>
+          </a>
+        </button>
+        
+        
+      </div>
+      <button class="accordion">М1.У2 (Месяц 1.Урок 2)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У3 (Месяц 1.Урок 3)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У4 (Месяц 1.Урок 4)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У5 (Месяц 1.Урок 5)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У6 (Месяц 1.Урок 6)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У7 (Месяц 1.Урок 7)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У8 (Месяц 1.Урок 8)</button>
+      <div class="panel"> </div>
+
+
+    </div>
+
+    <button class="accordion">Месяц 2</button>
+    <div class="panel">
+
+      <button class="accordion">М1.У1 (Месяц 1.Урок 1)</button>
+      <div class="panel">
+        <button class="accordion">Задание 1. Теория </button>
+        <div class="panel"> </div>
+        <button class="accordion">Задание 2. Теория </button>
+        <div class="panel"> </div>
+        <button class="accordion">Задание 3. Теория </button>
+        <div class="panel"> </div>
+        <button class="accordion">Задание 1. Теория </button>
+        <div class="panel"> </div>
+        <button class="accordion">Задание 1. Теория </button>
+        <div class="panel"> </div>
+        <button class="accordion">Задание 1. Теория </button>
+        <div class="panel"> </div>
+      </div>
+      <button class="accordion">М1.У2 (Месяц 1.Урок 2)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У3 (Месяц 1.Урок 3)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У4 (Месяц 1.Урок 4)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У5 (Месяц 1.Урок 5)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У6 (Месяц 1.Урок 6)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У7 (Месяц 1.Урок 7)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У8 (Месяц 1.Урок 8)</button>
+      <div class="panel"> </div>
+
+
+    </div>
+    <button class="accordion">Месяц 3</button>
+    <div class="panel">
+
+      <button class="accordion">М1.У1 (Месяц 1.Урок 1)</button>
+      <div class="panel">
+        <button class="accordion">Задание 1. Теория </button>
+        <div class="panel"> </div>
+        <button class="accordion">Задание 2. Теория </button>
+        <div class="panel"> </div>
+        <button class="accordion">Задание 3. Теория </button>
+        <div class="panel"> </div>
+        <button class="accordion">Задание 1. Теория </button>
+        <div class="panel"> </div>
+        <button class="accordion">Задание 1. Теория </button>
+        <div class="panel"> </div>
+        <button class="accordion">Задание 1. Теория </button>
+        <div class="panel"> </div>
+      </div>
+      <button class="accordion">М1.У2 (Месяц 1.Урок 2)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У3 (Месяц 1.Урок 3)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У4 (Месяц 1.Урок 4)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У5 (Месяц 1.Урок 5)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У6 (Месяц 1.Урок 6)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У7 (Месяц 1.Урок 7)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У8 (Месяц 1.Урок 8)</button>
+      <div class="panel"> </div>
+
+
+    </div>
+    <button class="accordion">Месяц 4</button>
+    <div class="panel">
+
+      <button class="accordion">М1.У1 (Месяц 1.Урок 1)</button>
+      <div class="panel">
+        <button class="accordion">Задание 1. Теория </button>
+        <div class="panel"> </div>
+        <button class="accordion">Задание 2. Теория </button>
+        <div class="panel"> </div>
+        <button class="accordion">Задание 3. Теория </button>
+        <div class="panel"> </div>
+        <button class="accordion">Задание 1. Теория </button>
+        <div class="panel"> </div>
+        <button class="accordion">Задание 1. Теория </button>
+        <div class="panel"> </div>
+        <button class="accordion">Задание 1. Теория </button>
+        <div class="panel"> </div>
+      </div>
+      <button class="accordion">М1.У2 (Месяц 1.Урок 2)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У3 (Месяц 1.Урок 3)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У4 (Месяц 1.Урок 4)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У5 (Месяц 1.Урок 5)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У6 (Месяц 1.Урок 6)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У7 (Месяц 1.Урок 7)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У8 (Месяц 1.Урок 8)</button>
+      <div class="panel"> </div>
+
+
+    </div>
+    <button class="accordion">Месяц 5</button>
+    <div class="panel">
+
+      <button class="accordion">М1.У1 (Месяц 1.Урок 1)</button>
+      <div class="panel">
+        <button class="accordion">Задание 1. Теория </button>
+        <div class="panel"> </div>
+        <button class="accordion">Задание 2. Теория </button>
+        <div class="panel"> </div>
+        <button class="accordion">Задание 3. Теория </button>
+        <div class="panel"> </div>
+        <button class="accordion">Задание 1. Теория </button>
+        <div class="panel"> </div>
+        <button class="accordion">Задание 1. Теория </button>
+        <div class="panel"> </div>
+        <button class="accordion">Задание 1. Теория </button>
+        <div class="panel"> </div>
+      </div>
+      <button class="accordion">М1.У2 (Месяц 1.Урок 2)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У3 (Месяц 1.Урок 3)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У4 (Месяц 1.Урок 4)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У5 (Месяц 1.Урок 5)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У6 (Месяц 1.Урок 6)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У7 (Месяц 1.Урок 7)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У8 (Месяц 1.Урок 8)</button>
+      <div class="panel"> </div>
+
+
+    </div>
+    <button class="accordion">Месяц 6</button>
+    <div class="panel">
+
+      <button class="accordion">М1.У1 (Месяц 1.Урок 1)</button>
+      <div class="panel">
+        <button class="accordion">Задание 1. Теория </button>
+        <div class="panel"> </div>
+        <button class="accordion">Задание 2. Теория </button>
+        <div class="panel"> </div>
+        <button class="accordion">Задание 3. Теория </button>
+        <div class="panel"> </div>
+        <button class="accordion">Задание 1. Теория </button>
+        <div class="panel"> </div>
+        <button class="accordion">Задание 1. Теория </button>
+        <div class="panel"> </div>
+        <button class="accordion">Задание 1. Теория </button>
+        <div class="panel"> </div>
+      </div>
+      <button class="accordion">М1.У2 (Месяц 1.Урок 2)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У3 (Месяц 1.Урок 3)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У4 (Месяц 1.Урок 4)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У5 (Месяц 1.Урок 5)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У6 (Месяц 1.Урок 6)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У7 (Месяц 1.Урок 7)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У8 (Месяц 1.Урок 8)</button>
+      <div class="panel"> </div>
+
+
+    </div>
+    <button class="accordion">Месяц 7</button>
+    <div class="panel">
+
+      <button class="accordion">М1.У1 (Месяц 1.Урок 1)</button>
+      <div class="panel">
+        <button class="accordion">Задание 1. Теория </button>
+        <div class="panel"> </div>
+        <button class="accordion">Задание 2. Теория </button>
+        <div class="panel"> </div>
+        <button class="accordion">Задание 3. Теория </button>
+        <div class="panel"> </div>
+        <button class="accordion">Задание 1. Теория </button>
+        <div class="panel"> </div>
+        <button class="accordion">Задание 1. Теория </button>
+        <div class="panel"> </div>
+        <button class="accordion">Задание 1. Теория </button>
+        <div class="panel"> </div>
+      </div>
+      <button class="accordion">М1.У2 (Месяц 1.Урок 2)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У3 (Месяц 1.Урок 3)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У4 (Месяц 1.Урок 4)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У5 (Месяц 1.Урок 5)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У6 (Месяц 1.Урок 6)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У7 (Месяц 1.Урок 7)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У8 (Месяц 1.Урок 8)</button>
+      <div class="panel"> </div>
+
+
+    </div>
+    <button class="accordion">Месяц 8</button>
+    <div class="panel">
+
+      <button class="accordion">М1.У1 (Месяц 1.Урок 1)</button>
+      <div class="panel">
+        <button class="accordion">Задание 1. Теория </button>
+        <div class="panel"> </div>
+        <button class="accordion">Задание 2. Теория </button>
+        <div class="panel"> </div>
+        <button class="accordion">Задание 3. Теория </button>
+        <div class="panel"> </div>
+        <button class="accordion">Задание 1. Теория </button>
+        <div class="panel"> </div>
+        <button class="accordion">Задание 1. Теория </button>
+        <div class="panel"> </div>
+        <button class="accordion">Задание 1. Теория </button>
+        <div class="panel"> </div>
+      </div>
+      <button class="accordion">М1.У2 (Месяц 1.Урок 2)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У3 (Месяц 1.Урок 3)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У4 (Месяц 1.Урок 4)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У5 (Месяц 1.Урок 5)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У6 (Месяц 1.Урок 6)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У7 (Месяц 1.Урок 7)</button>
+      <div class="panel"> </div>
+      <button class="accordion">М1.У8 (Месяц 1.Урок 8)</button>
+      <div class="panel"> </div>
+
+
+    </div>
+
+  </div>
+
+
+  <script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+      });
+    }
+  </script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+<!-- /.content -->
+{% endblock main_content %}

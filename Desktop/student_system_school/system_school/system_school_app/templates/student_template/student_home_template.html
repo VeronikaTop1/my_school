@@ -1,0 +1,118 @@
+{% extends 'student_template/base_template.html' %}
+{% load static %}
+{% block page_title %}
+Панель для занятий
+{% endblock page_title %}
+{% block main_content %}
+
+<style>
+  .course-preview__title.primary-title {
+    font-size: 48px
+  }
+
+  .course-progress__text {
+    font-weight: 500;
+    font-size: 18px
+  }
+
+  .course_wrapper {
+    display: flex;
+    margin: 3% 8%;
+    padding: 3% 8%;
+    width: 70%;
+    border-radius: 30px;
+    background-color: aquamarine;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .course_cover, .cover, .card-footer {
+    width: auto;
+    height: auto;
+  }
+  .course_cover {
+    display: flex;
+    flex-direction: row;
+    background-color: aquamarine;
+    justify-content: center;
+
+  }
+
+  .course-title {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding: 1%;
+    max-width: 25vw;
+
+  }
+  .cover {
+    display: flex;
+    align-items: right;
+    padding: 5% 0 5% 0;
+    max-width: 25vw;
+  }
+
+
+  .card_wrapper {
+    justify-content: center;
+    max-width: 30vw;
+    padding-bottom: 3%;
+
+
+  }
+
+  .card-footer {
+    display: flex;
+
+
+  }
+
+  .btn-block {
+    font-size: 27px;
+  }
+
+  .course-progress__text {
+    font-size: 20px;
+    padding-top: 3%;
+    margin-top: 3%;
+    border-top: 1px dashed rgb(0, 123, 255);
+  }
+</style>
+
+<!-- Main content -->
+<div class="course_wrapper">
+  <div class="course_cover">
+    <div class="course-title">
+      <h3 class="course-preview__title primary-title">Программирование на Python</h3>
+      <p class="course-progress__text">
+        8 месяцев <br>
+        32 урока
+      </p>
+    </div>
+    <div class="cover">
+      <img src="{% static "dist/img/python_cover.png" %}" title="Программирование на Python" width = 'auto'>
+    </div>
+  </div>
+  <div class="card_wrapper">
+  <div class="card-footer">
+    {% url 'course' as course %}
+
+    <button class="btn btn-primary btn-block">
+      <a href="/course" type="submit" class=" {% if request.path == course %} active {% endif %}"> <font color="white">Перейти к курсу</font> </a>
+    </button>
+
+  </div>
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+<!-- /.content -->
+{% endblock main_content %}

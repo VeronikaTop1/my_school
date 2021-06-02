@@ -1,0 +1,182 @@
+{% extends 'student_template/base_template_task.html' %}
+{% load static %}
+
+
+{% block main_content %}
+
+<style>
+  .content {
+    height: 100vh;
+  }
+  .container-fluid {
+    display: flex;
+    flex-direction: row;
+
+  }
+
+  .input_window_code_wrapper {
+    width: 41vw;
+    max-width: 41vw;
+    max-height: 50vh;
+    height: 50vh;
+    margin: 0;
+  }
+
+  .console {
+    width: 41vw;
+    max-width: 41vw;
+    max-height: 50vh;
+    height: 50vh;
+  }
+
+  .theory_window {
+    background-color: wheat;
+    font-size: 20px;
+    width: 41vw;
+    height: 100vh;
+    word-wrap: normal;
+    overflow: auto;
+    border-radius: 1%;
+  }
+  .pre {
+    overflow-wrap: normal;
+  }
+
+  .first_column {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+
+  .second_column {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+  textarea {
+    width:41vw; 
+    max-width: 41vw;
+    max-height: 50vh;
+    height: 50vh;
+    padding: 0 1% 1% 1%;
+  }
+  
+.b {
+   background-color: rgb(255, 255, 255, 0.5);
+   width: min-content;
+   border-radius: 8%;
+   padding: 1%;
+   position: relative;
+   left: 150px;
+ }
+
+
+</style>
+<!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+
+    <div class="first_column">
+      <div class="input_window_code_wrapper"> 
+        <p> <textarea name="text">  
+import turtle
+t = turtle.Turtle()
+t.backward(100)
+t.up()
+t.right(90)
+t.forward(20)
+t.left(90)
+t.down()
+t.forward(100)
+
+t.backward(100)
+t.up()
+t.right(90)
+t.forward(20)
+t.left(90)
+t.down()
+t.forward(100)
+
+t.backward(100)
+t.up()
+t.right(90)
+t.forward(20)
+t.left(90)
+t.down()
+t.forward(100)
+
+t.backward(50)
+t.left(90)
+t.forward(100)
+# Ваш код здесь
+        </textarea></p>
+        
+      </div>
+      <div class="console">
+        <img src="{% static "dist/img/console.png" %}" width="100%" alt="">
+      </div>
+    </div>
+
+    <div class="second_column">
+      <div class="theory_window">
+ <pre>
+     
+
+<h2>        Черепашку можно:</h2>
+    ● поворачивать вправо командой right();
+    ● перемещать назад командой backward(). 
+ 
+  Еще есть команда up(), убирающая перо с холста 
+  (то есть она говорит черепашке, что ей не надо оставлять 
+  за собой след – не надо рисовать).
+  С помощью команды down() рисование можно снова включить. 
+  Вызывать эти функции нужно так же, как и остальные, 
+  которыми мы уже пользовались.
+
+  Давайте опробуем некоторые из этих команд, создав еще один рисунок. 
+  Пусть на этот раз черепашка изобразит две линии.
+  Введите следующий код:
+
+  <div class="b"><b>
+  t.backward(100)
+  t.up()
+  t.right(90)
+  t.forward(20)
+  t.left(90)
+  t.down()
+  t.forward(100)</b>
+  </div> 
+
+    <b>Порядок действий:</b>
+
+  ● Сперва с помощью t.backward(100) мы переместили черепашку на 100 пикселей назад 
+  и вызовом t.up() отключили рисование.
+
+  ● Далее командой t.right(90) мы развернули черепашку на 90 градусов вправо так, 
+  чтобы она указывала вниз, и командой t.forward(20) передвинули ее на 20 пикселей вперед. 
+
+  ● При этом на экране ничего не появилось, ведь раньше мы отключили рисование.
+
+  ● Затем командой t.left(90) мы повернули черепашку на 90 градусов влево, 
+  после чего она стала указывать вправо, и командой down() снова включили рисование.
+  ● И наконец, командой t.forward(100) мы прочертили линию, параллельную первой.
+  
+  ● А теперь попробуйте начертить третью линию, которая будет параллельна первым двум.
+  
+  <b> Если у вас получилось, попробуйте начертить линию, которая будет пересекать 
+  все три линии и будет им перпендикулярна. 
+
+  То есть, угол между последней линией и первыми тремя будет равен 90 градусам.</b>
+
+
+
+  </pre>
+      </div>
+    </div>
+
+
+
+  </div>
+</section>
+<!-- /.content -->
+{% endblock main_content %}
