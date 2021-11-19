@@ -1,0 +1,101 @@
+{% extends 'student_template/base_template_task.html' %}
+{% load static %}
+
+
+{% block main_content %}
+
+<style>
+  .content {
+    height: 100vh;
+  }
+  .container-fluid {
+    display: flex;
+    flex-direction: row;
+
+  }
+
+  .input_window_code_wrapper {
+    width: 41vw;
+    max-width: 41vw;
+    max-height: 50vh;
+    height: 50vh;
+    margin: 0;
+  }
+
+  .console {
+    width: 41vw;
+    max-width: 41vw;
+    max-height: 50vh;
+    height: 50vh;
+  }
+
+  .theory_window {
+    background-color: wheat;
+    font-size: 20px;
+    padding: 1%;
+    width: 41vw;
+    max-width: 41vw;
+    height: 100vh;
+    word-wrap: normal;
+    overflow: auto;
+    border-radius: 1%;
+  }
+  .pre {
+    overflow-wrap: normal;
+  }
+
+  .first_column {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+
+  .second_column {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+  textarea {
+    width:41vw; 
+    max-width: 41vw;
+    max-height: 50vh;
+    height: 50vh;
+    padding: 1%;
+  }
+  
+
+
+</style>
+<!-- Main content -->
+<section class="content">
+  <div class="container-fluid">
+
+    <div class="first_column">
+      <div class="input_window_code_wrapper">
+       
+        <p> <textarea name="text">  # Здесь будут инструкции, теория и задания:)</textarea></p>
+        
+      </div>
+      <div class="console">
+        <img src="{% static "dist/img/console.png" %}" width="100%" alt="">
+      </div>
+    </div>
+
+    <div class="second_column">
+      <div class="theory_window">
+<pre>
+
+
+
+
+  
+            <h7><b>Здесь будут инструкции, теория и задания:)😎</b></h7></pre>
+      </div>
+    </div>
+
+
+
+  </div>
+</section>
+<!-- /.content -->
+{% endblock main_content %}
